@@ -1,8 +1,22 @@
 <h1>{{title}}</h1>
 <h2>entretiens vidéo - tests caméra</h2>
 
-<!-- <app-app-camera6></app-app-camera6> -->
-<app-record-rtc></app-record-rtc>
+<app-app-chrono2
+  [tpsTotal]="tpsTotalChrono"
+  [stopChrono]="stopChrono"
+  [begin]="beginChrono"
+  (endTime)="endChrono()"></app-app-chrono2>
 
-<!-- <app-chrono
-  [tpsTotal]="10"></app-chrono> -->
+<!-- <app-app-camera6></app-app-camera6> -->
+<app-record-rtc
+  [startRecord]="startRecord"
+  [stopRecord]="stopRecord"
+  [reinitRecord]="reinitRecord"
+  (cameraError)="onCameraError($event)"></app-record-rtc>
+
+<button type="button"
+  (click)="lancementCamera()">
+  Launch camera</button>
+<button type="button"
+  (click)="recommencer()">
+  réinitialiser</button>

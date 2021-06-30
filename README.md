@@ -1,3 +1,6 @@
+> ng build --prod --base-href="https://maelmanifacier.github.io/CamRec/"
+> ngh
+
 # Composants
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
