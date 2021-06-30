@@ -1,0 +1,33 @@
+<div class="groupeGlobal">
+    <h4>{{name}}</h4>
+    <p>Exemple
+      <a href="https://developers.google.com/web/updates/2016/01/mediarecorder"
+        target="_blank">
+      Record Audio and Video with MediaRecorder</a> ;;
+      <br/>
+      <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record"
+        target="_blank">
+      webrtc/samples/src/content/getusermedia/record/</a>
+    </p>
+    <p>Les composants 4 et 5 entre en conflit avec le 6,
+      donc pour activer la caméra du 6, il faut désactiver le 4 et le 5 !!
+      Pour cela aller dans le fichier "app.component.html" et commenter les composants 4 et 5.</p>
+
+    <video id="gumVideo" playsinline autoplay width="600" height="300"></video>
+    <video id="recordedVideo" playsinline loop width="600" height="300"></video>
+
+    <div>
+      <button id="startButton">Start camera</button>
+      <button id="recordingButton" disabled>Start Recording</button>
+      <button id="playButton" disabled>Play</button>
+      <button id="downloadButton" disabled>Download</button>
+    </div>
+
+    <div>
+      Recording format: <select id="codecPreferences" disabled></select>
+    </div>
+    <div>
+      <h4>Media Stream Constraints options</h4>
+      <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+    </div>
+</div>

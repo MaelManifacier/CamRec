@@ -1,0 +1,5 @@
+<div class="ctn-chrono">
+  <p-knob [(ngModel)]="compteur" [max]="tpsTotal"
+    valueColor="MediumSeaGreen" rangeColor="Silver"></p-knob>
+</div>
+<p *ngIf="showLabelFin" class="labelFin">Fin du chrono !!</p>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+$blue : #548687;
+$dark: #2D3142;
+
+body {
+  background-color: $dark;
+  color: whitesmoke;
+}
+
+button {
+  color: #DBCFB0;
+  background-color: $blue;
+  border: none;
+  padding: .6rem .8rem;
+  margin: 1vh 2vw;
+  font-weight: 800;
+}
