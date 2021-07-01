@@ -1,8 +1,11 @@
 <div class="cnt-record">
-  <button type="button" class="btn"
-    *ngIf="canStopRecording && isRecording"
+  <button type="button"
+    *ngIf="isRecording"
     (click)="stopRecording()">Stop recording</button>
+  <button type="button"
+    *ngIf="this.videoCreated"
+    (click)="download()">Download</button>
 
-  <video [hidden]="isVideoRegistered && !isRecording" id="videoRecording" autoplay loop></video>
+  <video [hidden]="isVideoRegistered || !isRecording" id="videoRecording" autoplay loop></video>
   <video [hidden]="!isVideoRegistered" id="videoRecorded" controls playsinline></video>
 </div>

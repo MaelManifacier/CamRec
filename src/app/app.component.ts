@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Composants';
+  title = 'CamRec';
 
   // lancement caméra
   startRecord: Subject<void> = new Subject<void>();
@@ -28,6 +28,11 @@ export class AppComponent {
   lancementCamera(): void {
     this.beginChrono.next(10);
     this.startRecord.next();
+  }
+
+  beginWith(tps: number) {
+    this.startRecord.next();
+    this.beginChrono.next(tps);
   }
 
   onCameraError(msg: string): void {

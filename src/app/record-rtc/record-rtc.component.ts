@@ -22,6 +22,7 @@ export class RecordRtcComponent implements OnInit {
   videoRecorded: any;
 
   blobs: any = [];
+  videoCreated: any;
 
   isVideoRegistered = false;
   isRecording = false;
@@ -102,8 +103,7 @@ export class RecordRtcComponent implements OnInit {
       this.isRecording = false;
       let blob = this.recorder?.getBlob() || new Blob();
       // console.log('blobRecorded : ', blob)
-      // Sauvegarde du fichier :
-      // RecordRTC.invokeSaveAsDialog(blob, 'test-record-rtc');
+      this.videoCreated = blob;
 
       this.isVideoRegistered = true;
 
@@ -117,6 +117,11 @@ export class RecordRtcComponent implements OnInit {
       this.videoRecorded.controls = true;
       this.videoRecorded.play();
     });
+  }
+
+  download() {
+    // Sauvegarde du fichier :
+    RecordRTC.invokeSaveAsDialog(this.videoCreated, 'test-record-rtc');
   }
 
 }
